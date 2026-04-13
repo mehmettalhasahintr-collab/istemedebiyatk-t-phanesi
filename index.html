@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İstem Koleji Türkiye Edebiyat Kütüphanesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Arka plan görselini daha edebi bir tonla karartalım */
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                        url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden; /* Kayma çubuğunu gizler */
+        }
+
+        /* LOGOLAR - Mobilde daha iyi görünmesi için düzenleme */
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 30px;
+            z-index: 10;
+        }
+
+        .logo img {
+            height: 70px;
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+            transition: transform 0.3s;
+        }
+        
+        .logo img:hover { transform: translateY(-5px); }
+
+        /* Giriş Alanı */
+        #giris {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .kutu {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 60px 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2); /* İnce bir çerçeve */
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            animation: fadeIn 1.8s ease-out;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(30px, 8vw, 60px); /* Ekran boyutuna göre değişen font */
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(20px, 5vw, 35px);
+            margin-bottom: 25px;
+            color: #ffd700;
+            font-style: italic;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 35px;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        button {
+            padding: 18px 50px;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            background: #ffd700;
+            color: #1a1a1a;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+            background: #fff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <div class="logo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_BIiJnI9k2tqnjM20uPS7H5N40AK9DN9N-g&s" alt="Sol Logo"></div>
+        <div class="logo"><img src="https://i.hizliresim.com/ldux5ye.png" alt="Sağ Logo"></div>
+    </div>
+
+    <div id="giris">
+        <div class="kutu">
+            <h1>İstem Koleji</h1>
+            <h2>Edebiyat Kütüphanesi</h2>
+            <p>Türk Edebiyatının Dijital Yolculuğuna Hoş Geldiniz</p>
+            <button onclick="gir()">Kütüphaneye Gir</button>
+        </div>
+    </div>
+
+    <script>
+        function gir(){
+            // Küçük bir geçiş efekti hissi için butona basınca karartma eklenebilir
+            document.body.style.opacity = "0";
+            document.body.style.transition = "1s";
+            setTimeout(() => {
+                window.location.href = "map.html";
+            }, 800);
+        }
+    </script>
+
+</body>
+</html>
